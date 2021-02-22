@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+
+{% for therapist in therapists %}
+
+
+<li><a href="{% url 'therapists:therapist' therapist.rec_id %}">{{ therapist.FIO }}</a></li>
+
+{% endfor %}
+
+{% endblock %}

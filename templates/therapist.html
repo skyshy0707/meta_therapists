@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+
+<div id="parent">
+
+<div v-bind:style="left_block">
+<img v-bind:style="avatar" src={{ therapist.photo }}>
+</div>
+
+<div v-bind:style="right_block">
+
+<h3>
+{{ therapist.FIO }}
+</h3>
+
+<h5>Методы:</h5>
+
+{% for method in therapist.methods %}
+
+<li v-bind:style="method">{{ method }}</li>
+
+{% endfor %}
+
+</div>
+
+</div>
+	
+{% block custom_js %}
+<script>
+var app = new Vue(
+{
+el: "#parent",
+data: {
+left_block: {
+position:'absolute',
+top: 0,
+left: 0,
+width: 'relative',
+marginTop: '5%',
+},
+right_block:{
+position:'absolute',
+top: 0,
+right: 0,
+width: '65%',
+marginTop: '5%',
+},
+avatar:{
+objectFit: 'cover',
+border:'5px solid rgba(17, 107, 242, 1)',
+width: '300px',
+height: '400px',
+},
+method:{
+display: 'inline-block',
+height: '50px',
+background: 'silver',
+margin: '2px',
+padding: '12px',
+fontSize: '16px',
+textAlign: 'center',
+},
+},
+}
+);
+
+</script>
+{% endblock %}
+{% endblock %}
