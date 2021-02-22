@@ -7,5 +7,7 @@ basic web project (djnago+vue.js)
 Зависимости:
 
 Python 3.8.3;
+
 Django 3.1.7;
+
 Vue.js 2.6.12
